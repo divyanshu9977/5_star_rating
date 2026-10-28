@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .star {
+        color: gray;
+        cursor: pointer;
+        font-size: 30px;
+    }
+    .filled{
+        color: #ffd700;
+    }
+</style>
+<body>
+    <div id="rating-stars">
+        <span class="star" onclick="setRating(1)">*</span>
+        <span class="star" onclick="setRating(2)">*</span>
+        <span class="star" onclick="setRating(3)">*</span>
+        <span class="star" onclick="setRating(4)">*</span>
+        <span class="star" onclick="setRating(5)">*</span>
+    </div>
+
+    <script>
+        function setRating(rating){
+            let stars = document.querySelectorAll(".star");
+            
+            for(let i=0;i<stars.length;i++){
+                if(i<rating){
+                    stars[i].classList.add("filled");
+                }else{
+                    stars[i].classList.remove("filled");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
